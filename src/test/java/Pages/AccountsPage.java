@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AccountsPage extends  BasePage{
-    private final static By ICON_LOCATOR = By.xpath("//div[@class='slds-page-header--object-home slds-page-header_joined slds-page-header_bleed slds-page-header slds-shrink-none test-headerRegion forceListViewManagerHeader']");
+    private final static By ICON_LOCATOR = By.xpath("//div[@data-aura-class='forceListViewManagerHeader']");
     private final static By NEW_ACCOUNT_BUTTON = By.cssSelector("div.active a[title=New]");
     private final static By ACCOUNT_NAME_INPUT=By.xpath("//input[@role='combobox']");
     private final static By ACCOUNT_PHONE=By.xpath("//input[@type='tel']");
