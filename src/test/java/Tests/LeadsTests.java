@@ -1,24 +1,28 @@
 package Tests;
 
+import Enums.Salutation;
+import Models.Lead;
+import Pages.LeadDetailsPage;
+import Pages.LeadsPage;
+import Pages.Modals.NewLeadModal;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import Pages.LeadsPage;
 
 public class LeadsTests extends BaseTest {
-    protected final static String FIRST_NAME_LEAD="Masha";
-    protected final static String LAST_NAME_LEAD = "Chornaya";
-    protected final static String COMPANY_LEAD = "BestComp";
-    
     private LeadsPage leadsPage;
+    private NewLeadModal newLeadModal;
+    private LeadDetailsPage leadDetailsPage;
 
     @BeforeClass
     public void initialise() {
+
         leadsPage = new LeadsPage(driver);
+        newLeadModal = new NewLeadModal(driver);
+        leadDetailsPage=new LeadDetailsPage(driver);
     }
-    
     @Test
-    public void createLeadTest()  {
+    public void createLeadTest() throws InterruptedException {
         loginPage.setUserName(USERNAME);
         loginPage.setPassword(PASSWORD);
         loginPage.clickLoginButton();
@@ -26,15 +30,16 @@ public class LeadsTests extends BaseTest {
         homePage.openLeadsTab();
         leadsPage.waitForPageLoaded();
         leadsPage.clickNewButton();
-        leadsPage.clickLeadStatusButton();
-        leadsPage.clickLeadStatusOption();
-        leadsPage.clickSalutationButton();
-        leadsPage.clickSalutationOption();
-        leadsPage.setFirstNameInput(FIRST_NAME_LEAD);
-        leadsPage.setLastNameInput(LAST_NAME_LEAD);
-        leadsPage.setCompanyInput(COMPANY_LEAD);
-        leadsPage.clickSaveLeadButton();
-        leadsPage.waitLeadInfo();
-        Assert.assertTrue(leadsPage.isNewLeadInfoDisplayed());
+        // Template
+        Lead testLead = new Lead.LeadBuilder("TMS","New","Chornaya")
+                .email("21313213123")
+                .phone("6514541")
+                .firstName("Masha")
+                .salutation(Salutation.MS)
+                .build();
+        newLeadModal.fillForm(testLead);
+        newLeadModal.clickSaveButton();
+       // Assert.assertTrue(leadsPage.isConfirmationPopupPresent());
+        Assert.assertEquals(leadDetailsPage.getLeadInfo(), testLead);
     }
 }

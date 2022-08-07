@@ -7,6 +7,7 @@ public class HomePage extends BasePage {
     private final static By USER_ICON_LOCATOR = By.cssSelector(".slds-avatar_profile-image-small");
     private final static By LEADS_TAB_LOCATOR = By.xpath("//*[@title='Leads']");
     private final static By ACCOUNTS_TAB_LOCATOR = By.xpath("//*[@title='Accounts']");
+    private final static By CONTACTS_TAB_LOCATOR = By.xpath("//*[@title='Contacts']");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -30,5 +31,8 @@ public class HomePage extends BasePage {
     }
     public void openAccountsTab(){
         jsClick(driver.findElement(ACCOUNTS_TAB_LOCATOR));
+    }
+    public void openContactsTab(){
+        jsClick(driver.findElement(CONTACTS_TAB_LOCATOR));
     }
 }

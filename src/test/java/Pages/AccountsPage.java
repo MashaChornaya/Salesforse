@@ -12,7 +12,7 @@ public class AccountsPage extends  BasePage{
     private final static By ACCOUNT_NAME_INPUT=By.xpath("//input[@role='combobox']");
     private final static By ACCOUNT_PHONE=By.xpath("//input[@type='tel']");
    private final static By ACCOUNT_WEBSITE=By.xpath("//input[@type='url']");
-   private final static By ACCOUNT_SAVE_BUTTON=By.xpath("//button[@title='Save']");
+   private final static By ACCOUNT_SAVE_BUTTON=By.xpath("//button[@title='Save']");// //*[@title='Save']
    private final static By INFO_NEW_ACCOUNT_SAVED=By.xpath("//span[text()=' was created.']");
 
     public AccountsPage(WebDriver driver) {
