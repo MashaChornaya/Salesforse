@@ -1,5 +1,6 @@
 package Tests;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -9,14 +10,14 @@ import Pages.HomePage;
 import Pages.LoginPage;
 
 import java.util.concurrent.TimeUnit;
-
+@Log4j2
 @Listeners(TestListener.class)
 public class BaseTest {
     protected WebDriver driver;
     protected LoginPage loginPage;
     protected HomePage homePage;
 
-    protected final static String USERNAME = "mashabigdreams-bt5c@force.com";
+    protected final static String USERNAME = "kisachornaya-5jvj@force.com";
     protected final static String PASSWORD = "1536KR777";
 
 
@@ -40,9 +41,11 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void clearCookies() {
+        log.debug("Clear cookies");
         driver.manage().deleteAllCookies();
         ((JavascriptExecutor) driver).executeScript(String.format("window.localStorage.clear();"));
         ((JavascriptExecutor) driver).executeScript(String.format("window.sessionStorage.clear();"));
+
     }
 
     @AfterClass (alwaysRun = true)

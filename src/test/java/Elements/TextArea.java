@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class TextArea extends BaseElement{
 
-    private final static String TEXT_AREA_LOCATOR="//label[text()='%s']";
+    private final static String TEXT_AREA_LOCATOR="//label[@lightning-textarea_textarea and text()='%s']";
 
     public TextArea(WebDriver driver, String label) {
         super(driver, label);

@@ -16,7 +16,7 @@ public class LeadDetailsPage extends BasePage{
     }
     public Lead getLeadInfo() {
         String company = new LightningFormattedElement(driver, "Company").getText();
-        Lead.LeadBuilder leadBuilder = new Lead.LeadBuilder(company, "New","Chornaya");
+        Lead.LeadBuilder leadBuilder =Lead.builder().company(company);
         String phone = new LightningFormattedElement(driver, "Phone").getText();
         if (phone != "") {
             leadBuilder.phone(phone);

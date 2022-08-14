@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class LightningCombobox extends BaseElement{
-    private final static String BUTTON_LOCATOR ="%s";
-    private final static String OPTION_LOCATOR ="%s %s";
+    private final static String BUTTON_LOCATOR ="//button[@aria-label='%s']";
+    private final static String OPTION_LOCATOR ="//span[@lightning-basecombobox_basecombobox and text()='%s']";
     public LightningCombobox(WebDriver driver, String label) {
         super(driver, label);
     }

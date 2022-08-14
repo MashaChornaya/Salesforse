@@ -21,7 +21,7 @@ public class AccountDetailsPage extends BasePage {
     }
     public Account getAccountInfo() {
         String parentAccount = new LightningFormattedElement(driver, "Parent Account").getText();
-        Account.AccountBuilder accountBuilder = new Account.AccountBuilder("Best account");
+        Account.AccountBuilder accountBuilder =Account.builder().parentAccount(parentAccount);
         String phone = new LightningFormattedElement(driver, "Phone").getText();
         if (phone != "") {
             accountBuilder.phone(phone);

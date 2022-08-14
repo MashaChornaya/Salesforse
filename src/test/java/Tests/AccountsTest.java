@@ -13,6 +13,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.security.Provider;
+
 public class   AccountsTest extends BaseTest {
 
     private AccountsPage accountsPage;
@@ -26,6 +28,7 @@ public class   AccountsTest extends BaseTest {
         newAccountModal= new NewAccountModal(driver);
         accountDetailsPage=new AccountDetailsPage(driver);
     }
+    //@Data Provider
 
     @Test
     public  void createAccountsTest() {
@@ -38,7 +41,7 @@ public class   AccountsTest extends BaseTest {
         accountsPage.clickNewAccountButton();
 
         // Template
-        Account testAccount = new Account.AccountBuilder("Best account")
+        Account testAccount= Account.builder().parentAccount("Best account")
                 .phone("6514541")
                 .fax("4564lo")
                 .website("www.bst.com")

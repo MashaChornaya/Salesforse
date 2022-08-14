@@ -36,7 +36,8 @@ public class ContactsTest extends  BaseTest {
         contactsPage.waitForPageLoaded();
         contactsPage.clickNewButton();
         // Template
-        Contact testContact = new Contact.ContactBuilder("Khobec",Salutation.MS,"Green")
+        Contact testContact= Contact.builder().lastName("Khobec")
+                .salutation(Salutation.MS)
                 .firstName("Ann")
                 .email("21313213123")
                 .phone("6514541")

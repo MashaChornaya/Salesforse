@@ -19,7 +19,7 @@ public class ContactDetailsPage extends BasePage{
 
     public Contact getContactInfo() {
         String accountName = new LightningFormattedElement(driver, "Account Name").getText();
-        Contact.ContactBuilder contactBuilder= new Contact.ContactBuilder( "Khobec", Salutation.MS,"Green");
+        Contact.ContactBuilder contactBuilder=Contact.builder().accountName(accountName);
         String phone = new LightningFormattedElement(driver, "Phone").getText();
         if (phone != "") {
             contactBuilder.phone(phone);

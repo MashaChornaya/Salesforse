@@ -3,14 +3,16 @@ package Pages.Modals;
 import Elements.LightningInput;
 import Enums.Salutation;
 import Models.Lead;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 
-
+@Log4j2
 public class NewLeadModal extends BaseModal {
     public NewLeadModal(WebDriver driver) {
         super(driver);
     }
     public void fillForm(Lead inputLead){
+        log.info(String.format("Creating new lead:%s",inputLead));
         new LightningInput(driver,"First name").setValue(inputLead.getFirstName());
         new LightningInput(driver,"Last name").setValue(inputLead.getLastName());
         new LightningInput(driver,"Company").setValue(inputLead.getCompany());
