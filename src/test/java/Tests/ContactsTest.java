@@ -45,6 +45,9 @@ public class ContactsTest extends  BaseTest {
                 .title("jhuhp")
                 .build();
         newContactModal.fillForm(testContact);
+        contactsPage.clickAccountNameButton();
+        contactsPage.setAccName("New");
+        contactsPage.clickSaveNewAccButton();
         newContactModal.clickSaveButton();
         Assert.assertEquals(contactDetailsPage.getContactInfo(), testContact);
 
