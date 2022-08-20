@@ -43,10 +43,10 @@ public class ContactsTest extends  BaseTest {
                 .phone("6514541")
                 .mobile("456321759")
                 .title("jhuhp")
+                .accountName("New")
                 .build();
         newContactModal.fillForm(testContact);
         contactsPage.clickAccountNameButton();
-        contactsPage.setAccName("New");
         contactsPage.clickSaveNewAccButton();
         newContactModal.clickSaveButton();
         contactsPage.waitContactInfo();

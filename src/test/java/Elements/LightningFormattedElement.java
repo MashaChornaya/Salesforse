@@ -13,9 +13,7 @@ public class LightningFormattedElement extends BaseElement {
     }
 
     public String getText() {
+
         return driver.findElement(By.xpath(String.format(visibleTextLocator, label))).getText();
     }
-  //  this.scrollIntoView();
-  //   System.out.printf("Setting %s input value = %s", label, value);
- //           inputElement.sendKeys(value);
 }

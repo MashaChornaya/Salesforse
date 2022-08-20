@@ -9,9 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class AccountsPage extends  BasePage{
     private final static By ICON_LOCATOR = By.xpath("//div[@data-aura-class='forceListViewManagerHeader']");
     private final static By NEW_ACCOUNT_BUTTON = By.cssSelector("div.active a[title=New]");
-    private final static By ACCOUNT_NAME_INPUT=By.xpath("//input[@role='combobox']");
-    private final static By ACCOUNT_PHONE=By.xpath("//input[@type='tel']");
-   private final static By ACCOUNT_WEBSITE=By.xpath("//input[@type='url']");
    private final static By ACCOUNT_SAVE_BUTTON=By.xpath("//button[@title='Save']");// //*[@title='Save']
    private final static By INFO_NEW_ACCOUNT_SAVED=By.xpath("//span[text()=' was created.']");
 
@@ -26,16 +23,6 @@ public class AccountsPage extends  BasePage{
         driver.findElement(NEW_ACCOUNT_BUTTON).click();
     }
 
-    public void setAccountNameInput(String accountName){
-        driver.findElement(ACCOUNT_NAME_INPUT).sendKeys(accountName);
-    }
-
-    public void setAccountPhone(String accountPhone){
-        driver.findElement(ACCOUNT_PHONE).sendKeys(accountPhone);
-    }
-    public void setAccountWebsite(String accountWebsite){
-        driver.findElement(ACCOUNT_WEBSITE).sendKeys(accountWebsite);
-    }
     public void clickAccountSaveButton(){
         driver.findElement(ACCOUNT_SAVE_BUTTON).click();
     }

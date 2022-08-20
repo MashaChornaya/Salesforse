@@ -27,6 +27,9 @@ public class Lead {
     private  String noOfEmployees;
     private  String annualRevenue;
     private  LeadSource leadSource;
+    private Industry industry;
+    private String street;
+    private String description;
     private  String fullName;
 
         public String getFullName () {

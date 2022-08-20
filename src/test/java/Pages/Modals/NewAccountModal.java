@@ -1,6 +1,8 @@
 package Pages.Modals;
 
+import Elements.LightningCombobox;
 import Elements.LightningInput;
+import Elements.TextArea;
 import Models.Account;
 import Models.Lead;
 import Pages.BasePage;
@@ -19,12 +21,13 @@ public class NewAccountModal extends BaseModal {
         new LightningInput(driver,"Phone").setValue(inputAccount.getPhone());
         new LightningInput(driver,"Parent account").setValue(inputAccount.getParentAccount());
         new LightningInput(driver,"Website").setValue(inputAccount.getWebsite());
+        new LightningCombobox(driver,"Type").selectByVisibleText(String.valueOf(inputAccount.getType()));
+        new LightningCombobox(driver,"Industry").selectByVisibleText(String.valueOf(inputAccount.getIndustry()));
         new LightningInput(driver,"Fax").setValue(inputAccount.getFax());
         new LightningInput(driver, "Employees").setValue(inputAccount.getEmployees());
         new LightningInput(driver,"Annual Revenue").setValue(inputAccount.getAnnualRevenue());
-        new LightningInput(driver,"Description").setValue(inputAccount.getDescription());
-        new LightningInput(driver,"Billing Street").setValue(inputAccount.getBillingStreet());
-        new LightningInput(driver,"Shipping Street").setValue(inputAccount.getShippingStreet());
-
+        new TextArea(driver,"Description").setText(inputAccount.getDescription());
+        new TextArea(driver,"Billing Street").setText(inputAccount.getBillingStreet());
+        new TextArea(driver,"Shipping Street").setText(inputAccount.getShippingStreet());
     }
 }

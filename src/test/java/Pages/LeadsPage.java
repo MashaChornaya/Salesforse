@@ -10,14 +10,6 @@ public class LeadsPage extends BasePage{
 
     private final static By NEW_BUTTON = By.cssSelector("div.active a[title=New]");
     private final static By ICON_LOCATOR = By.xpath("//div[@data-aura-class='forceListViewManagerHeader']");
-
-    private final static By SALUTATION_BUTTON=By.xpath("//button[@name='salutation']");
-    private final static By SALUTATION_OPTION=By.xpath("//span[@class='slds-truncate' and text()='Ms.']");
-    private final static By LEAD_STATUS_BUTTON=By.xpath("//button[@aria-label='Lead Status, New']");
-    private final static By LEAD_STATUS_OPTION=By.xpath("//span [@class='slds-truncate' and text()='Working']");
-    private final static By FIRST_NAME_INPUT=By.xpath("//input[@name='firstName']");
-    private final static By LAST_NAME_INPUT=By.xpath("//input[@placeholder='Last Name']");
-    private final static By COMPANY_INPUT=By.xpath("//input[@name='Company']");
     private final static By SAVE_LEAD_BUTTON=By.xpath("//button[@name='SaveEdit' and text()='Save']");
 
     private final static By INFO_NEW_LEAD_SAVED=By.xpath(" //div[@aria-label='Success']");
@@ -33,31 +25,7 @@ public class LeadsPage extends BasePage{
     public void clickNewButton() {
         driver.findElement(NEW_BUTTON).click();
     }
-    public void clickSalutationButton(){
-        driver.findElement(SALUTATION_BUTTON).click();
 
-    }
-    public void clickSalutationOption(){
-        driver.findElement(SALUTATION_OPTION).click();
-    }
-
-    public void clickLeadStatusButton(){
-        driver.findElement(LEAD_STATUS_BUTTON).click();
-    }
-
-    public void clickLeadStatusOption(){
-        driver.findElement(LEAD_STATUS_OPTION).click();
-    }
-
-    public void setFirstNameInput(String leadFirstName){
-        driver.findElement(FIRST_NAME_INPUT).sendKeys(leadFirstName);
-}
-    public void setLastNameInput(String leadLastName){
-        driver.findElement(LAST_NAME_INPUT).sendKeys(leadLastName);
-    }
-    public void setCompanyInput(String leadCompany){
-        driver.findElement(COMPANY_INPUT).sendKeys(leadCompany);
-    }
     public void clickSaveLeadButton(){
         driver.findElement(SAVE_LEAD_BUTTON).click();
     }
